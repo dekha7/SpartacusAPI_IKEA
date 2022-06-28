@@ -3,9 +3,8 @@ info:
   version: 1.0.0
   title: Spartacus API
   description: Spartacus iRecover Integration API to get/update Component(spare parts) details against the Article and StoreID. Using this API we call the APIM API and get the data from APIM.
-  contactDetails: Deepak Khare (Senior Technical Lead)
-  ContactNumber: 7350014640, 8123314640
-  Email: deepak.khare@ingka.com
+  contact:
+   email: deepak.khare@ingka.com
 basePath: /spartacusapi
 schemes:
   - https
