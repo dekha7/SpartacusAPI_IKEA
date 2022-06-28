@@ -1,0 +1,147 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Spartacus API
+  description: Spartacus iRecover Integration API
+basePath: /spartacusapi
+schemes:
+  - https
+paths:
+  "/GetArticleComponents":
+    post:
+      tags:
+      - GetArticleComponents
+      summary: To get Component(spare parts) details against the Article and StoreID
+      operationId: GetArticleComponentsDetails
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      parameters:
+      - name: paramArticle
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/Article"
+      responses:
+        '200':
+          description: Success
+          schema:
+            uniqueItems: false
+            type: string
+            items:
+              "$ref": "#/definitions/ArticleComponents"
+  "/UpdateArticleComponents":
+    post:
+      tags:
+      - UpdateArticleComponents
+      summary: To update Component(spare part) quantity/stock against the Article
+        and StoreID
+      operationId: UpdateArticleComponentsDetails
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      parameters:
+      - name: componentStock
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/UpdateComponentStock"
+      responses:
+        '200':
+          description: Success
+          schema:
+            uniqueItems: false
+            type: string
+            items:
+              "$ref": "#/definitions/ArticleComponents"
+definitions:
+  Article:
+    type: object
+    properties:
+      articleNo:
+        description: ArticleNo of the Article/Item
+        type: string
+      businessUnit:
+        description: Business Unit/StoreID of the component
+        type: string
+  ArticleComponents:
+    type: object
+    properties:
+      articleNo:
+        description: ArticleNo of the Article/Item
+        type: string
+      articleDesc:
+        description: Description of the Article/Item
+        type: string
+      articleType:
+        description: Type of the Article/Item
+        type: string
+      businessUnit:
+        description: Business Unit/StoreID of the component
+        type: string
+      components:
+        uniqueItems: false
+        type: array
+        items:
+          "$ref": "#/definitions/Component"
+  Component:
+    type: object
+    properties:
+      compNo:
+        description: ComponentNo which is associated with any Article/Item
+        type: string
+      compDesc:
+        description: Description of the component
+        type: string
+      location:
+        description: Location of the component in Store
+        type: string
+      stock:
+        format: int32
+        description: Stock quantity which is available against the component in particular
+          store
+        type: integer
+      imageDesc:
+        description: Description of the component image provided by the coWorker(s)
+          during upload
+        type: string
+      imageRequestID:
+        description: Unique image ID associated against the component image
+        type: string
+  UpdateComponentStock:
+    type: object
+    properties:
+      businessUnit:
+        description: Business Unit/StoreID of the component
+        type: string
+      articleNo:
+        description: ArticleNo of the Article/Item
+        type: string
+      compNo:
+        description: ComponentNo which is associated with any Article/Item
+        type: string
+      quantity:
+        format: int32
+        description: Quantity of the Component, It can be in +/- both based on addition/substraction
+          need to perform against the component stock(ie. +4/-4)
+        type: integer
+securityDefinitions:
+  Bearer:
+    name: x-client-id
+    in: header
+    type: apiKey
+    description: Please enter the Authorization header x-client-id
+security:
+- Bearer: []

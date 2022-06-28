@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpartacusAPI", "SpartacusAPI.csproj", "{1782E6B6-D210-4E42-9E75-CE36E3A3FF8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1782E6B6-D210-4E42-9E75-CE36E3A3FF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1782E6B6-D210-4E42-9E75-CE36E3A3FF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1782E6B6-D210-4E42-9E75-CE36E3A3FF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1782E6B6-D210-4E42-9E75-CE36E3A3FF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CEF45CE-66C0-494C-A0FA-475832E39DC9}
+	EndGlobalSection
+EndGlobal
