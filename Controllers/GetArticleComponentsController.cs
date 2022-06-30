@@ -15,7 +15,7 @@ namespace SpartacusAPI.Controllers
 {
     [ApiController]
     //[Route("[controller]")]    
-    [Route("spartacusapi/GetArticleComponents")]
+    [Route("spartacusapi/getArticleComponents")]
     //[ApiKeyAuth]
     public class GetArticleComponentsController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace SpartacusAPI.Controllers
         /// </summary>
         [HttpPost]
 
-        public async Task<ArticleComponents> GetArticleComponentsDetails([FromBody] Article paramArticle)
+        public async Task<ArticleComponents> GetArticleComponents([FromBody] Article paramArticle)
         {
             var data = await GetAuthors(paramArticle.businessUnit, paramArticle.ArticleNo);
             //if (data != null)

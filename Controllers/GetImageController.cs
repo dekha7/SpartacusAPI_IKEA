@@ -8,7 +8,7 @@ using Google.Cloud.Storage.V1;
 namespace SpartacusAPI.Controllers
 {
     [ApiController]    
-    [Route("spartacusapi/GetImage")]
+    [Route("spartacusapi/getImage")]
     [ApiKeyAuth]
     public class GetImageController : ControllerBase
     {

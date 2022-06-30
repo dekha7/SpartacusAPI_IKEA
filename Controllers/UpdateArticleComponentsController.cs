@@ -12,7 +12,7 @@ using SpartacusAPI.Filters;
 namespace SpartacusAPI.Controllers
 {
     [ApiController]
-    [Route("spartacusapi/UpdateArticleComponents")]
+    [Route("spartacusapi/updateArticleComponents")]
     //[ApiKeyAuth]
     public class UpdateArticleComponentsController : ControllerBase
     {

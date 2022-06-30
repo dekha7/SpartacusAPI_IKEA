@@ -68,6 +68,36 @@ paths:
             type: string
             items:
               "$ref": "#/definitions/ArticleComponents"
+  "/getImage":
+    post:
+      tags:
+      - GetImage
+      summary: To get image path of the given Component(spare part)
+        and StoreID
+      operationId: GetImage
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      parameters:
+      - name: getimageURL
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/GetImage"
+      responses:
+        '200':
+          description: Success
+          schema:
+            uniqueItems: false
+            type: string
+            items:
+              "$ref": "#/definitions/GetImage"
 definitions:
   Article:
     type: object
